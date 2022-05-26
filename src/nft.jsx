@@ -207,7 +207,10 @@ const NFT721 = () => {
       console.log(nftContract);
       const txid = await nftContract.nftContract.methods
         .createNFT(uri)
-        .send({ from: String(account.address) });
+        .send({ from: String(account.address) })
+        .on("confirmation", () => {
+          window.location.reload();
+        });
       var myNFT = await nftContract.nftContract.methods
         .getMyNFTs()
         .call({ from: String(account.address) });
@@ -225,7 +228,10 @@ const NFT721 = () => {
         .send({ from: String(account.address) });
       const txid = await marketContract.marketContract.methods
         .createMarketItem(nftAdress, tokenId, price)
-        .send({ from: String(account.address) });
+        .send({ from: String(account.address) })
+        .on("confirmation", () => {
+          window.location.reload();
+        });
     }
   };
 
@@ -233,7 +239,10 @@ const NFT721 = () => {
     if (itemId) {
       await marketContract.marketContract.methods
         .cancelSell(itemId)
-        .send({ from: String(account.address) });
+        .send({ from: String(account.address) })
+        .on("confirmation", () => {
+          window.location.reload();
+        });
     }
   };
 
@@ -255,9 +264,14 @@ const NFT721 = () => {
           .approve(marketContract.address, max_int256)
           .send({ from: String(account.address) });
       }
-      await marketContract.marketContract.methods.buyItem(itemId).send({
-        from: String(account.address),
-      });
+      await marketContract.marketContract.methods
+        .buyItem(itemId)
+        .send({
+          from: String(account.address),
+        })
+        .on("confirmation", () => {
+          window.location.reload();
+        });
     }
   };
 
