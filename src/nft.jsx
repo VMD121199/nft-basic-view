@@ -252,17 +252,22 @@ const NFT721 = () => {
         .marketItem(itemId)
         .call();
       var price = data.price;
+      console.log(price);
+      console.log(
+        await tokenContract.tokenContract.methods
+          .allowance(account.address[0], marketContract.address)
+          .call()
+      );
       if (
-        (await tokenContract.tokenContract.methods.allowance(
-          account.address,
-          marketContract.address
-        )) < price
+        (await tokenContract.tokenContract.methods
+          .allowance(account.address[0], marketContract.address)
+          .call()) < price
       ) {
         let max_int256 =
           "115792089237316195423570985008687907853269984665640564039457584007913129639935";
         await tokenContract.tokenContract.methods
           .approve(marketContract.address, max_int256)
-          .send({ from: String(account.address) });
+          .send({ from: String(account.address[0]) });
       }
       await marketContract.marketContract.methods
         .buyItem(itemId)
