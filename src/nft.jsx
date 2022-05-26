@@ -253,7 +253,7 @@ const NFT721 = () => {
         .call();
       var price = data.price;
       if (
-        (await tokenContract.tokenContract.methods.allowances(
+        (await tokenContract.tokenContract.methods.allowance(
           account.address,
           marketContract.address
         )) < price
