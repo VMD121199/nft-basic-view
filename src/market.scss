@@ -1,0 +1,146 @@
+html,
+body {
+    padding: 0;
+    margin: 0;
+    font-family: "SUIT", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans,
+        Droid Sans, Helvetica Neue, sans-serif !important;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+* {
+    box-sizing: border-box;
+}
+.hover {
+    &:hover {
+        cursor: pointer;
+    }
+}
+@mixin flex_all_center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.page-title {
+    position: relative;
+    font-size: 36px;
+    font-weight: 800;
+    color: #1C2541;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: space-between;
+    // &::after {
+    //     position: absolute;
+    //     content: "";
+    //     height: 19px;
+    //     width: 150px;
+    //     left: 0;
+    //     bottom: 0;
+    //     background-color: #ffb8da;
+    //     z-index: -1;
+    // }
+}
+
+.cn-market-container {
+    .cn-market-main {
+        padding: 180px 75px 90px 75px;
+        .cn-title {
+            isolation: isolate;
+            position: relative;
+            color: #1c2541;
+            font-size: 36px;
+            font-weight: 800;
+            display: flex;
+            justify-content: space-between;
+            // &::after {
+            //     position: absolute;
+            //     content: "";
+            //     height: 19px;
+            //     width: 120%;
+            //     left: 0;
+            //     bottom: 0;
+            //     background-color: #ffb8da;
+            //     z-index: -1;
+            // }
+        }
+        .card-action {
+            margin-top: 50px;
+            padding: 50px;
+            border-radius: 8px;
+            font-size: 17px;
+            display: flex;
+            border: 1.5px solid #485470;
+            gap: 50px;
+            &-sell {
+                flex: 0 0 200px;
+                height: 60px;
+                background-color: #36f599;
+                color: #1c2541;
+                border-radius: 40px;
+                @include flex_all_center();
+            }
+            &-unsell {
+                flex: 0 0 200px;
+                height: 60px;
+                background-color: #ff5b6b;
+                border-radius: 40px;
+                color: #1c2541;
+                @include flex_all_center();
+            }
+            &-price {
+                flex: 1 1 100%;
+                & input {
+                    width: 100%;
+                    height: 100%;
+                    outline: none;
+                    border-radius: 8px;
+                    border-color: black;
+                    border-width: 1px;
+                    color: black;
+                    font-size: 17px;
+                    font-weight: 500;
+                    padding: 0 20px;
+                }
+            }
+            &-nft {
+                flex: 1 1 100%;
+                & select {
+                    width: 100%;
+                    height: 100%;
+                    outline: none;
+                    border-radius: 8px;
+                    border-color: black;
+                    color: black;
+                    font-size: 17px;
+                    font-weight: 500;
+                    padding: 0 20px;
+                }
+            }
+        }
+        .discover {
+            font-size: 36px;
+            margin: 50px 0;
+            span {
+                position: relative;
+                // &::after {
+                //     position: absolute;
+                //     content: "";
+                //     height: 19px;
+                //     width: 100%;
+                //     left: 0;
+                //     bottom: 0;
+                //     background-color: #ffb8da;
+                //     z-index: -1;
+                // }
+            }
+        }
+
+    }
+}
+.square {
+    width: 100%;
+    aspect-ratio: 1;
+}

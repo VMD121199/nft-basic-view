@@ -1,0 +1,32 @@
+@mixin flex_all_center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.nft-list-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 25px;
+    .nft-item {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+        border: 1.5px solid #485470;
+        border-radius: 8px;
+        color: #485470;
+        &-title {
+            font-size: 18px;
+        }
+        &-sub-title {
+            font-size: 15px;
+        }
+        &-action {
+            @include flex_all_center();
+            border-radius: 21px;
+            border: 1px solid #485470;
+            height: 42px;
+            font-size: 16px;
+        }
+    }
+}

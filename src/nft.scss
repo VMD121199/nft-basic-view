@@ -1,0 +1,98 @@
+@import './global.scss';
+.cn-nft-container {
+    .cn-nft-main {
+        padding: 180px 75px 100px 75px;
+        .main-content {
+            width: min(100vw, 1024px);
+            margin: 50px auto;
+            .section-title {
+                color: black;
+                font-weight: 600;
+                font-size: 24px;
+                margin: 50px 0;
+            }
+            .cn-nft-upload {
+                border: 1px dashed #888888;
+                background-color: #ebebeb;
+                border-radius: 10px;
+                padding: 50px;
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+                justify-content: center;
+                align-items: center;
+                .upload-img {
+                    width: 120px;
+                }
+                .upload-title {
+                    color: #888888;
+                    font-weight: 600;
+                    font-size: 20px;
+                }
+                .upload-sub-title {
+                    text-align: center;
+                    color: #888888;
+                    font-weight: 600;
+                    font-size: 14px;
+                }
+            }
+            .cn-nft-name {
+                input {
+                    width: 100%;
+                    background-color: #ebebeb;
+                    border: none;
+                    outline: none;
+                    padding: 16px 28px;
+                    font-size: 16px;
+                    font-weight: 400;
+                    color: black;
+                    border-radius: 10px;
+                }
+            }
+            .cn-nft-description {
+                textarea {
+                    width: 100%;
+                    background-color: #ebebeb;
+                    border: none;
+                    outline: none;
+                    padding: 16px 28px;
+                    font-size: 16px;
+                    font-weight: 400;
+                    color: black;
+                    border-radius: 10px;
+                }
+            }
+
+            .cn-nft-price {
+                background-color: #ebebeb;
+                border-radius: 10px;
+                width: 100%;
+                display: flex;
+                font-weight: 400;
+
+                input {
+                    border: none;
+                    outline: none;
+                    background-color: transparent;
+                    padding: 17px 25px;
+                    flex: 1 1 100%;
+                }
+                select {
+                    flex: 1 1 70px;
+                    border: none;
+                    background-color: transparent;
+                    margin-right: 20px;
+                    outline: none;
+                }
+            }
+        }
+        .cn-nft-create-list {
+            width: 350px;
+            height: 60px;
+            background-color: #36f599;
+            border-radius: 40px;
+            margin: 50px auto;
+            @include flex_all_center()
+        }
+    }
+}
