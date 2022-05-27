@@ -1,20 +1,16 @@
-
 import "./App.css";
 import React, { Fragment } from "react";
 
-import { Route, BrowserRouter,Routes } from "react-router-dom";
+import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 
 import NFT from "./nft";
+import Market from "./marketplace";
 function App() {
-    return (
-      <BrowserRouter>
-        <Fragment>
-          <Routes>
-            <Route path="/" element={<NFT />} />
-          </Routes>
-        </Fragment>
-      </BrowserRouter>
-    );
+  return (
+    <Router>
+      <NFT />
+    </Router>
+  );
 }
 
 export default App;
